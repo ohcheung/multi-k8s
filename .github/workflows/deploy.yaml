@@ -13,15 +13,15 @@ jobs:
       - run: docker build -t ohcheung/react-test -f ./client/Dockerfile.dev ./client
       - run: docker run -e CI=true ohcheung/react-test npm test
  
-      - run: docker build -t hing/multi-client ./client
-      - run: docker build -t hing/multi-nginx ./nginx
-      - run: docker build -t hing/multi-server ./server
-      - run: docker build -t hing/multi-worker ./worker
+      - run: docker build -t cheungoihing/multi-client ./client
+      - run: docker build -t cheungoihing/multi-nginx ./nginx
+      - run: docker build -t cheungoihing/multi-server ./server
+      - run: docker build -t cheungoihing/multi-worker ./worker
  
-      - run: docker push hing/multi-client
-      - run: docker push hing/multi-nginx
-      - run: docker push hing/multi-server
-      - run: docker push hing/multi-worker
+      - run: docker push cheungoihing/multi-client
+      - run: docker push cheungoihing/multi-nginx
+      - run: docker push cheungoihing/multi-server
+      - run: docker push cheungoihing/multi-worker
  
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
