@@ -1,11 +1,11 @@
 version: "3"
 services:
   client:
-    image: "hing/multi-client"
+    image: "cheungoihing/multi-client"
     mem_limit: 128m
     hostname: client
   server:
-    image: "hing/multi-server"
+    image: "cheungoihing/multi-server"
     mem_limit: 128m
     hostname: api
     environment:
@@ -17,14 +17,14 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    image: "hing/multi-worker"
+    image: "cheungoihing/multi-worker"
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    image: "hing/multi-nginx"
+    image: "cheungoihing/multi-nginx"
     mem_limit: 128m
     hostname: nginx
     ports:
